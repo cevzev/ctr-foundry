@@ -15,6 +15,10 @@ resources:
   memory: "0.5Gi"
 environment_variables:
   # These values come from your .env at run/deploy time — keep the ${...} refs as-is.
+  - name: MCP_SERVER_LABEL           # <-- added
+    value: ${MCP_SERVER_LABEL}
+  - name: MCP_SERVER_URL             # <-- added
+    value: ${MCP_SERVER_URL}
   - name: AZURE_AI_PROJECT_ENDPOINT
     value: ${AZURE_AI_PROJECT_ENDPOINT}
   - name: AZURE_AI_MODEL_DEPLOYMENT_NAME
