@@ -15,6 +15,8 @@ resources:
   memory: "0.5Gi"
 environment_variables:
   # These values come from your .env at run/deploy time — keep the ${...} refs as-is.
+  - name: TOOLBOX_ENDPOINT          # <-- added
+    value: ${TOOLBOX_ENDPOINT}
   - name: MCP_SERVER_LABEL           # <-- added
     value: ${MCP_SERVER_LABEL}
   - name: MCP_SERVER_URL             # <-- added
