@@ -1,4 +1,5 @@
 # travel_assistant/main.py — Python entry point that hosts TravelBuddy: it creates
+from tools import convert_currency, get_local_time, get_weather
 # the Foundry model client, defines the agent, and starts the Responses server.
 # Complete the one TODO inside main() below.
 import os
@@ -26,8 +27,12 @@ def main() -> None:
     agent = Agent(
         client=client,
         name="travel-buddy",
-        instructions="TODO: write TravelBuddy's system instructions here.",
-        # History is managed by the hosting infrastructure, so don't store it server-side.
+        instructions=(
+            # ... keep your Step 1 instructions here ...
+            "Use your tools for weather, local time, and currency conversion "
+            "when the traveler asks time-sensitive questions. Keep answers brief."
+        ),
+        tools=[get_weather, get_local_time, convert_currency],  # <-- add this line
         default_options={"store": False},
     )
 
