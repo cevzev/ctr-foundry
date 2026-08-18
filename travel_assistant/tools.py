@@ -55,7 +55,7 @@ def get_local_time(city: str) -> dict:
     return {
         "city": city,
         "iso_time": now.isoformat(timespec="seconds"),
-        "tz": tz_name,
+        "tz": tz_name, 
     }
 
 
